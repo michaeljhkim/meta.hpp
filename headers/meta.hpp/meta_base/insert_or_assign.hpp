@@ -42,19 +42,19 @@ namespace meta_hpp::detail
 {
     template < typename Key, typename Value, typename Compare, typename Allocator >
     void insert_or_assign( //
-        std::map<Key, Value, Compare, Allocator>& map,
-        std::map<Key, Value, Compare, Allocator>& value
+        std::multimap<Key, Value, Compare, Allocator>& multimap,
+        std::multimap<Key, Value, Compare, Allocator>& value
     ) {
-        map.swap(value);
-        map.merge(value);
+        multimap.swap(value);
+        multimap.merge(value);
     }
 
     template < typename Key, typename Value, typename Compare, typename Allocator >
     void insert_or_assign( //
-        std::map<Key, Value, Compare, Allocator>& map,
-        std::map<Key, Value, Compare, Allocator>&& value
+        std::multimap<Key, Value, Compare, Allocator>& multimap,
+        std::multimap<Key, Value, Compare, Allocator>&& value
     ) {
-        map.swap(value);
-        map.merge(std::move(value));
+        multimap.swap(value);
+        multimap.merge(std::move(value));
     }
 }

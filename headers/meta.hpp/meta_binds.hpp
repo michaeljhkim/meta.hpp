@@ -579,7 +579,8 @@ namespace meta_hpp
     }
 
     inline metadata_bind& metadata_bind::operator()(std::string name, uvalue value) & {
-        values_.insert_or_assign(std::move(name), std::move(value));
+        //values_.insert_or_assign(std::move(name), std::move(value));
+        values_.insert( std::pair<std::string, uvalue>(std::move(name), std::move(value)) );
         return *this;
     }
 

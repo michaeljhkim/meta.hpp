@@ -153,7 +153,8 @@ namespace meta_hpp
 
 namespace meta_hpp
 {
-    using metadata_map = std::map<std::string, uvalue, std::less<>>;
+    //using metadata_map = std::map<std::string, uvalue, std::less<>>;
+    using metadata_map = std::multimap<std::string, uvalue, std::less<>>;
     using typedef_map = std::map<std::string, any_type, std::less<>>;
     using uvalue_list = std::vector<uvalue>;
 
